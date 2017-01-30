@@ -1,0 +1,44 @@
+body {
+
+}
+
+.add_form {
+    width: 30%;
+}
+
+
+
+#content-column h2{
+    display: inline-block;
+}
+
+.add_form select {
+    width: 187px;
+}
+
+.add_form input, textarea, select {
+    margin-bottom: 7px;
+}
+
+#footer {
+    text-align: center;
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+
+.pagination {
+    display: block;
+    max-width: 135px;
+    margin: 0 auto;
+}
+
+.sql_time {
+    text-align: center;
+}
+
+.btn-primary {
+    display: inline-block;
+    float: right;
+    margin-top: 20px;
+}
+

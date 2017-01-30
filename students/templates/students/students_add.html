@@ -1,0 +1,58 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Students{% endblock meta_title %}
+
+{% block title %}Student add{% endblock title %}
+
+{% block content %}
+<form class="add_form" action="{% url 'students_add' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
+    <div>
+        <label for="first_name">First name</label>
+        <input type="text" value=""
+               name="first_name" id="first_name" placeholder="{{ errors.first_name }}"/>
+    </div>
+    <div>
+        <label for="last_name">Last name</label>
+        <input type="text" value=""
+               name="last_name" id="last_name" placeholder="{{ errors.last_name }}"/>
+    </div>
+    <div>
+        <label for="middle_name">Middle name</label>
+        <input type="text" value=""
+               name="middle_name" id="middle_name" />
+    </div>
+    <div>
+        <label for="birthday">Birthdate</label>
+        <input type="text" value=""
+               name="birthday" id="birthday"
+               placeholder="For exsample 1984-12-30" />
+        <span class="help-block">{{ errors.birthday }}</span>
+    </div>
+    <div>
+        <label for="ticket">Ticket</label>
+        <input type="text" value=""
+               name="ticket" id="ticket" />
+        <span class="help-block">{{ errors.ticket }}</span>
+    </div>
+    <div>
+        <label for="student_group">Group</label>
+        <select name="student_group" id="student_group">
+            <option value="">Group</option>
+            {% for group in groups %}
+            <option value="{{ group.id }}">{{ group.title }}</option>
+            {% endfor %}
+        </select>
+        <span class="help-block">{{ errors.student_group }}</span>
+    </div>
+    <div>
+        <textarea name="notes" id="notes" class="form-control" placeholder="Notes"></textarea>
+    </div>
+    <div>
+        <button type="submit" name="add_button">Add</button>
+        <button type="submit" name="cancel_button">Cancel</button>
+    </div>
+</form>
+
+{% endblock content %}

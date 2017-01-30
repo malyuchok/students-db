@@ -1,0 +1,54 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Group{% endblock meta_title %}
+
+{% block title %}Students in this group{% endblock title %}
+
+{% block content %}
+
+<div>
+    <table class="table table-hover table-striped">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Last name</th>
+                <th>First name</th>
+                <th>Ticket</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for student in students %}
+        <tr>
+            <td>{{ forloop.counter }}</td>
+            <td>{{ student.last_name }}</td>
+            <td>{{ student.first_name }}</td>
+            <td>{{ student.ticket }}</td>
+            <td>
+                <div class="dropdown">
+                    <button class="btn btn-default dropdown-toggle"
+                        type="button" data-toggle="dropdown">Action<span class="caret"></span>
+                    </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="{% url "students_edit" student.id %}">
+                                    Edit
+                                </a>
+                            </li>
+                            <li role="presentation">
+                                <a role="menuitem" tabindex="-1" href="{% url "students_delete" student.id %}">
+                                    Delete
+                                </a>
+                            </li>
+                        </ul>
+                </div>
+            </td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+</div>
+
+{% endblock content %}

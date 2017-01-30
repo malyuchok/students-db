@@ -1,0 +1,21 @@
+{% extends "students/base.html" %}
+
+{% load static from staticfiles %}
+
+{% block meta_title %}Edit student{% endblock meta_title %}
+
+{% block title %}Edit{% endblock title %}
+
+{% block content %}
+
+<form class="add_form" action="{% url 'students_edit' object.id %}" method="post" enctype="multipart/form-data">
+{% csrf_token %}
+{{ form.as_p }}
+    <input type="submit" value="Зберегти" name="add_button"
+           class="btn btn-primary" />
+        <button type="submit" name="cancel_button" value="Скасувати"
+                class="btn btn-link">Cancel</button>
+</form>
+
+
+{% endblock content %}

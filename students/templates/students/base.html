@@ -1,0 +1,59 @@
+{% load static from staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block meta_title %}{% endblock meta_title %}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.3.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ PORTAL_URL }}{% static 'css/style.css' %}">
+
+</head>
+<body>
+
+        <!-- Start Container -->
+    <div class="container">
+        <!-- Start Header -->
+        <div class="row" id="header">
+            <!-- Logo -->
+        <div class="col-xs-8">
+            <h1>Base of students</h1>
+        </div>
+            <!-- End Header -->
+            <!-- Start SubHeader -->
+        <div class="row" id="sub-header">
+            <div class="col-xs-12">
+                <ul class="nav nav-tabs" role="tablist">
+                    <li role="presentation" {% if request.path == '/' %}class="active"{% endif %}>
+                        <a href="{% url "home" %}">Students</a>
+                    </li>
+                    <li role="presentation" {% if '/groups' in request.path %}class="active"{% endif %}>
+                        <a href="{% url "groups_list" %}">Groups</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+            <!-- End SubHeader -->
+            <!-- Start Main Page Content -->
+        <div class="row" id="content-columns">
+            <div class="col-xs-12" id="content-column">
+                <h2>{% block title %}{% endblock title %}</h2>
+                {% block content %}{% endblock content %}
+            </div>
+        </div>
+            <!-- End Main Page Content -->
+            <!-- Start Footer -->
+        <div class="row" id="footer">
+            <br class="col-xs-12">
+                &copy; 2017 Base of students</br>
+                Developed by mr.malyucho_Ok
+            </div>
+        </div>
+            <!-- End Footer -->
+    </div>
+        <!-- End Container -->
+
+<!-- Javascripts Section -->
+<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="https://cdn.jsdelivr.net/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+</body>
+</html>
