@@ -4,7 +4,7 @@
 
 {% block meta_title %}Students{% endblock meta_title %}
 
-{% block title %}Student add{% endblock title %}
+{% block title %}Add student{% endblock title %}
 
 {% block content %}
 <form class="add_form" action="{% url 'students_add' %}" method="post" enctype="multipart/form-data">{% csrf_token %}
@@ -33,8 +33,7 @@
     <div>
         <label for="ticket">Ticket</label>
         <input type="text" value=""
-               name="ticket" id="ticket" />
-        <span class="help-block">{{ errors.ticket }}</span>
+               name="ticket" id="ticket" placeholder="{{ errors.ticket }}"/>
     </div>
     <div>
         <label for="student_group">Group</label>
@@ -49,9 +48,9 @@
     <div>
         <textarea name="notes" id="notes" class="form-control" placeholder="Notes"></textarea>
     </div>
-    <div>
-        <button type="submit" name="add_button">Add</button>
-        <button type="submit" name="cancel_button">Cancel</button>
+    <div class="butonki">
+        <button class="add_button" type="submit" name="add_button">Add</button>
+        <button class="cancel_button" type="submit" name="cancel_button">Cancel</button>
     </div>
 </form>
 

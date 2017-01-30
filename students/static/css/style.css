@@ -1,23 +1,94 @@
 body {
-
+    background-color: #fff;
 }
 
 .add_form {
-    width: 30%;
+    display: block;
+    width: 370px;
+    margin: 0 auto;
 }
 
+.butonki {
+    margin-top: 15px;
+}
 
+.btn-primary {
+    line-height: 28px;
+}
+
+.add_form input {
+    display: block;
+    border: none;
+    background-color: #f0f0f0;
+    padding-left: 20px;
+    box-shadow: 3px 3px 1px rgba(158, 158, 158, 0.08), 0 0 0px rgb(158, 158, 158);
+    width: 350px;
+    height: 40px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.add_form select {
+    display: block;
+    background-color: #f0f0f0;
+    border: none;
+    width: 350px;
+    padding-left: 20px;
+    box-shadow: 3px 3px 1px rgba(158, 158, 158, 0.08), 0 0 0px rgb(158, 158, 158);
+    height: 40px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+.add_form textarea {
+    display: block;
+    background-color: #f0f0f0;
+    border: none;
+    width: 350px;
+    height: 80px;
+    box-shadow: 3px 3px 1px rgba(158, 158, 158, 0.08), 0 0 0px rgb(158, 158, 158);
+    border-radius:30px;
+}
+
+.add_form select:focus, input:focus {
+    outline: none;
+}
+
+.add_form .add_button {
+    display: inline-block;
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: #64bf7c;
+}
+
+.add_form .cancel_button {
+    display: inline-block;
+    width: 170px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f24c3d;
+}
 
 #content-column h2{
     display: inline-block;
 }
 
-.add_form select {
-    width: 187px;
-}
-
 .add_form input, textarea, select {
     margin-bottom: 7px;
+}
+
+.btn-primary {
+    display: inline-block;
+    float: right;
+    margin-top: 20px;
+    width: 120px;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: #64bf7c;
 }
 
 #footer {
@@ -36,9 +107,5 @@ body {
     text-align: center;
 }
 
-.btn-primary {
-    display: inline-block;
-    float: right;
-    margin-top: 20px;
-}
+
 
