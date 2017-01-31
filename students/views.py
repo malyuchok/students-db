@@ -116,10 +116,10 @@ def students_add(request):
                       {'groups': Group.objects.all().order_by('title')})
 
 def students_edit(request, sid):
-    return HttpResponse('<h1>Stud edit blyat</h1>' .format(sid))
+    return HttpResponse('<h1>Stud edit </h1>' .format(sid))
 
 def students_delete(request, sid):
-    return HttpResponse('<h1>Stud delete blyat</h1>' .format(sid))
+    return HttpResponse('<h1>Stud delete </h1>' .format(sid))
 
 def groups_list(request):
     groups = Group.objects.all()
