@@ -119,7 +119,7 @@ def students_edit(request, sid):
     return HttpResponse('<h1>Stud edit</h1>' .format(sid))
 
 def students_delete(request, sid):
-    return HttpResponse('<h1>Stud delete </h1>' .format(sid))
+    return HttpResponse('<h1>Stud delete</h1>' .format(sid))
 
 def groups_list(request):
     groups = Group.objects.all()
